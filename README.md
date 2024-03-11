@@ -21,7 +21,7 @@ Sigue estos pasos para configurar tu entorno de desarrollo:
       ```
     - Si **no** tienes Git, puedes descargar el repositorio como un archivo ZIP desde GitHub y descomprimirlo en tu máquina local.
 
-2. **Ahora volvemos a activar el mismo entorno virtual mencionado anteriormente en el siguiente link: https://github.com/mframosg/rest-api, creamos el .env como ya fue explicado y tendremos nuestra aplicación funcionando
+2. Ahora volvemos a activar el mismo entorno virtual mencionado anteriormente en el siguiente link: https://github.com/mframosg/rest-api, creamos el .env como ya fue explicado y tendremos nuestra aplicación funcionando
 
 ## Documentación adicional
 
