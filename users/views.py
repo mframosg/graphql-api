@@ -18,11 +18,6 @@ def create_random_users(num_entries):
         name = fake.name_male() if gender == 'M' else fake.name_female()
         age = fake.random_int(min=18, max=70)
         user = User(name=name, age=age, gender=gender)
-        
-        try:
-            user.full_clean()
-            users.append(user)
-        except ValidationError as e:
-            print(f"Error validating user: {e.message_dict}")
+        users.append(user)
 
     User.objects.bulk_create(users)

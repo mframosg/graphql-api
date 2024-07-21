@@ -6,7 +6,7 @@ from .views import create_random_users
 class UserType(DjangoObjectType):
     class Meta:
         model = User
-        fields = ('id', 'name', 'age')
+        fields = ('id', 'name', 'age', 'gender')
 
 class Query(graphene.ObjectType):
     users = graphene.List(UserType)
