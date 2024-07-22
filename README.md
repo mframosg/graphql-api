@@ -72,7 +72,8 @@ Para configurar tu base de datos en MySQL Workbench, sigue estos pasos:
       CREATE TABLE usuarios (
           idusuario INT AUTO_INCREMENT PRIMARY KEY,
           name VARCHAR(100),
-          age INT
+          age INT,
+          gender CHAR(1)
       );
       ```
   Con esto ya tenemos nuestra tabla creada.
@@ -131,6 +132,7 @@ Puedes utilizar Postman para realizar consultas y mutaciones en GraphQL:
     users {
       name
       age
+      gender
     }
   }
   ```
