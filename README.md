@@ -147,7 +147,7 @@ Puedes utilizar Postman para realizar consultas y mutaciones en GraphQL. A conti
   - **Cuerpo de la Solicitud**:
     ```graphql
     query {
-      users(gender: "M", age: 30, criteria: "greater") {
+      users(gender: "M", age: 30, criteria: "equal") {
         name
         age
         gender
