@@ -111,31 +111,62 @@ Con tu entorno configurado y las dependencias instaladas, estás listo para ejec
 
 ## Uso de la API GraphQL con Postman
 
-Puedes utilizar Postman para realizar consultas y mutaciones en GraphQL:
+Puedes utilizar Postman para realizar consultas y mutaciones en GraphQL. A continuación se detallan algunas operaciones que puedes realizar:
 
-- **Para llenar la tabla con registros**:
-  Utiliza la mutación GraphQL siguiente en Postman, configurando la petición como POST a `http://127.0.0.1:8000/graphql/`:
-  ```
-  mutation {
-    fillTable(numEntries: 1000000) {
-      success
+- **Obtener Todos los Usuarios**:
+  - **Método**: `POST`
+  - **URL**: `http://127.0.0.1:8000/graphql/`
+  - **Cuerpo de la Solicitud**:
+    ```graphql
+    {
+      users {
+        name
+        age
+        gender
+      }
     }
-  }
-  ```
+    ```
 
-**Advertencia**: Cada vez que uses el endpoint para agregar usuarios, la base de datos ejecutará un **TRUNCATE** a la tabla, eliminando todos los registros existentes antes de agregar los nuevos.
-
-- **Para recuperar usuarios**:
-  Realiza una consulta GraphQL en Postman con la petición configurada como POST a `http://127.0.0.1:8000/graphql/`:
-  ```
-  {
-    users {
-      name
-      age
-      gender
+- **Obtener Usuarios por Género**:
+  - **Método**: `POST`
+  - **URL**: `http://127.0.0.1:8000/graphql/`
+  - **Cuerpo de la Solicitud**:
+    ```graphql
+    query {
+      users(gender: "M") {
+        name
+        age
+        gender
+      }
     }
-  }
-  ```
+    ```
+
+- **Obtener Usuarios por Género y Edad**:
+  - **Método**: `POST`
+  - **URL**: `http://127.0.0.1:8000/graphql/`
+  - **Cuerpo de la Solicitud**:
+    ```graphql
+    query {
+      users(gender: "M", age: 30, criteria: "greater") {
+        name
+        age
+        gender
+      }
+    }
+    ```
+
+- **Llenar la Tabla con Registros**:
+  - **Método**: `POST`
+  - **URL**: `http://127.0.0.1:8000/graphql/`
+  - **Cuerpo de la Solicitud**:
+    ```graphql
+    mutation {
+      fillTable(numEntries: 1000) {
+        success
+      }
+    }
+    ```
+  - **Advertencia**: Cada vez que uses este endpoint para agregar usuarios, la base de datos ejecutará un **TRUNCATE** a la tabla, eliminando todos los registros existentes antes de agregar los nuevos.
 
 ## Documentación Adicional
 
