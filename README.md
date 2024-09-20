@@ -69,8 +69,8 @@ Para configurar tu base de datos en MySQL Workbench, sigue estos pasos:
 4. **Crear la Tabla Necesarias**:
    - Ejecuta el siguiente comando SQL para crear la tabla `usuarios` con el formato especificado:
       ```sql
-      CREATE TABLE usuarios (
-          idusuario INT AUTO_INCREMENT PRIMARY KEY,
+      CREATE TABLE user (
+          id INT AUTO_INCREMENT PRIMARY KEY,
           name VARCHAR(100),
           age INT,
           gender CHAR(1)
